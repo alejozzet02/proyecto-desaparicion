@@ -1026,35 +1026,184 @@ img { max-width: 100%; height: auto; }
 }
 
 /* --- Responsive --- */
+
+/* Tablets and large phones */
 @media (max-width: 768px) {
+    #header { padding: 28px 0 22px; }
     #header h1 { font-size: 1.3rem; }
-    #mainNav .container { flex-direction: column; align-items: stretch; }
-    .nav-search { margin-left: 0; }
-    .nav-search input { width: 100%; }
-    .nav-search { flex-direction: column; }
+
+    #mainNav .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .nav-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    .nav-search {
+        margin-left: 0;
+        flex-direction: row;
+    }
+    .nav-search input {
+        width: 100%;
+        flex: 1;
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+    .nav-search button {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+    .chart-card {
+        min-height: 200px;
+        padding: 12px;
+    }
 
     .modulo-grid { grid-template-columns: 1fr; }
+    .modulo-card { padding: 18px 16px; }
+    .modulo-card h3 { font-size: 1.05rem; }
 
     .timeline::before { left: 20px; }
-    .timeline-item { width: 100%; padding-left: 50px; padding-right: 10px; }
+    .timeline-item {
+        width: 100%;
+        padding: 14px 10px 14px 50px;
+        margin-bottom: 14px;
+    }
     .timeline-item:nth-child(odd),
     .timeline-item:nth-child(even) { left: 0; text-align: left; }
     .timeline-item:nth-child(odd)::before,
     .timeline-item:nth-child(even)::before {
         left: 2px;
         right: auto;
+        width: 30px;
+        height: 30px;
+        font-size: 0.75rem;
+        top: 18px;
     }
     .timeline-item:nth-child(odd) .timeline-mods {
         justify-content: flex-start;
     }
+    .tl-periodo-header { margin: 20px 0 8px; }
+    .tl-periodo-header h3 { font-size: 0.88rem; }
 
+    /* Module explorer mobile */
+    .modulo-group-header {
+        padding: 14px 14px;
+    }
+    .modulo-group-header h3 { font-size: 0.9rem; }
+    .mod-g-numero {
+        width: 30px;
+        height: 30px;
+        font-size: 1.2rem;
+    }
+    .modulo-group-body { padding: 8px 14px 14px; }
+    .mod-conexion {
+        padding: 8px 10px 8px 18px;
+        gap: 8px;
+    }
+    .conn-narrativa p { font-size: 0.78rem; }
+
+    /* Doc items */
+    .mod-doc-item { flex-wrap: wrap; gap: 6px; }
+    .mod-doc-item .doc-titulo { font-size: 0.82rem; min-width: 0; }
+    .mod-doc-item .doc-tamano { font-size: 0.72rem; }
+    .mod-doc-item .doc-btn { padding: 6px 14px; font-size: 0.82rem; }
+
+    .complementario-doc-item { flex-wrap: wrap; gap: 6px; }
+    .complementario-doc-item .doc-titulo { font-size: 0.8rem; }
+    .complementario-doc-item .doc-btn { padding: 6px 14px; font-size: 0.82rem; }
+
+    /* Search results mobile */
+    .search-result-item { flex-wrap: wrap; gap: 6px; }
+    .search-result-item .sr-titulo { font-size: 0.82rem; }
+    .search-result-item .sr-btn { padding: 6px 14px; font-size: 0.82rem; }
+
+    /* Modal mobile */
     .modal-content { width: 95%; margin: 2vh auto; max-height: 90vh; }
+    .modal-header { padding: 12px 14px; }
+    .modal-header h3 { font-size: 0.9rem; }
+    .modal-body { padding: 14px; }
+    .modal-tabs { padding: 0 14px; }
+    .tab-btn {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+    }
     .pdf-viewer iframe { height: 50vh; }
-    .mod-doc-item { flex-wrap: wrap; }
+
+    /* Dashboard intro */
+    .dashboard-intro { padding: 20px 0; }
+    .dashboard-intro h2 { font-size: 1.25rem; }
+    .dashboard-intro p { font-size: 0.85rem; }
+
+    .explorar-intro h2 { font-size: 1.15rem; }
+    .explorar-intro p { font-size: 0.8rem; }
 }
 
+/* Small phones */
 @media (max-width: 480px) {
-    #header { padding: 25px 0 20px; }
+    #header { padding: 22px 0 16px; }
     #header h1 { font-size: 1.1rem; }
-    .dashboard-intro h2 { font-size: 1.2rem; }
+    #header .subtitle { font-size: 0.82rem; }
+    .header-stats { font-size: 0.78rem; }
+
+    .container { padding: 0 14px; }
+
+    .nav-btn {
+        padding: 12px 14px;
+        font-size: 0.85rem;
+    }
+    .nav-search input { font-size: 0.85rem; padding: 8px 10px; }
+    .nav-search button { padding: 8px 12px; font-size: 0.85rem; }
+
+    .dashboard-intro h2 { font-size: 1.1rem; }
+    .charts-section h3 { font-size: 1rem; }
+    .chart-card { padding: 10px; min-height: 180px; }
+
+    .modulo-card { padding: 14px 12px; }
+    .modulo-card .mod-numero { font-size: 2rem; }
+    .modulo-card h3 { font-size: 0.95rem; }
+    .modulo-card .mod-desc { font-size: 0.78rem; }
+    .modulo-card .mod-meta { font-size: 0.72rem; flex-wrap: wrap; }
+
+    .timeline-item { padding: 10px 8px 10px 44px; }
+    .timeline-item::before { width: 26px; height: 26px; font-size: 0.65rem; top: 14px; }
+    .timeline-card { padding: 12px 14px; }
+    .timeline-card h4 { font-size: 0.88rem; }
+    .timeline-card p { font-size: 0.78rem; }
+
+    .tl-periodo-header h3 { font-size: 0.8rem; }
+
+    #viewExplorar h2 { font-size: 1.1rem; padding: 20px 0 8px; }
+    .modulo-list { padding: 10px 0 30px; }
+    .modulo-group-header { padding: 12px 12px; }
+    .modulo-group-header h3 { font-size: 0.82rem; }
+    .mod-g-numero { width: 26px; height: 26px; font-size: 1rem; }
+    .mod-conexion { padding: 6px 8px 6px 14px; }
+    .conn-narrativa { padding: 8px 10px; }
+    .conn-label { font-size: 0.7rem; }
+    .conn-narrativa p { font-size: 0.74rem; }
+
+    .mod-doc-item .doc-btn { font-size: 0.78rem; padding: 8px 12px; }
+    .complementario-doc-item .doc-btn { font-size: 0.78rem; padding: 8px 12px; }
+    .search-result-item .sr-btn { font-size: 0.78rem; padding: 8px 12px; }
+
+    .dato-impactante { padding: 10px 12px; }
+    .dato-impactante .di-valor { font-size: 1.2rem; }
+    .dato-impactante .di-categoria { font-size: 0.78rem; }
+    .dato-impactante .di-contexto { font-size: 0.7rem; }
+
+    .modal-content { width: 100%; border-radius: 0; margin: 0; max-height: 100vh; }
+    .modal-header { padding: 10px 12px; }
+    .modal-header h3 { font-size: 0.82rem; }
+    .tab-btn { padding: 8px 10px; font-size: 0.75rem; }
+    .modal-body { padding: 10px; }
+    .doc-text { font-size: 0.82rem; }
+
+    #footer { padding: 18px 0; }
+    #footer p { font-size: 0.72rem; }
 }
