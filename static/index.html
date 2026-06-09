@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desaparición y Búsqueda de Personas en Latinoamérica</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head>
+<body>
+
+<div id="app">
+    <header id="header">
+        <div class="container">
+            <h1>Desaparición y Búsqueda de Personas en Latinoamérica</h1>
+            <p class="subtitle">Diplomado — Dashboard narrativo para el autoestudio</p>
+            <div class="header-stats" id="headerStats">
+                <span>Cargando...</span>
+            </div>
+            <div class="header-badge" id="iaBadge" style="display:none">
+                <span>Datos enriquecidos con IA</span>
+            </div>
+        </div>
+    </header>
+
+    <nav id="mainNav">
+        <div class="container">
+            <button class="nav-btn active" data-view="dashboard">Dashboard</button>
+            <button class="nav-btn" data-view="timeline">Línea de Tiempo</button>
+            <button class="nav-btn" data-view="explorar">Explorar Módulos</button>
+            <div class="nav-search">
+                <input type="text" id="searchInput" placeholder="Buscar documentos...">
+                <button id="searchBtn">Buscar</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="mainContent">
+        <div class="container">
+
+            <!-- VISTA: Dashboard -->
+            <section id="viewDashboard" class="view active">
+                <div class="dashboard-intro">
+                    <h2>Panorama general</h2>
+                    <p id="dashboardDesc">
+                        Cargando información del proyecto...
+                    </p>
+                </div>
+
+                <!-- Sección de gráficas -->
+                <div class="charts-section" id="chartsSection" style="display:none">
+                    <h3>Estadísticas del material</h3>
+                    <div class="charts-grid">
+                        <div class="chart-card">
+                            <canvas id="chartDocsPorModulo"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <canvas id="chartPaises"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <canvas id="chartTemporal"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <canvas id="chartTematico"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modulo-grid" id="moduloGrid">
+                    <!-- Se renderiza con JS -->
+                </div>
+            </section>
+
+            <!-- VISTA: Línea de Tiempo -->
+            <section id="viewTimeline" class="view">
+                <div class="timeline-header">
+                    <h2>Línea de tiempo narrativa</h2>
+                    <p id="timelineSubtitle">Un recorrido por la historia de la desaparición forzada en América Latina.</p>
+                </div>
+                <div class="timeline" id="timelineContainer">
+                    <!-- Se renderiza con JS -->
+                </div>
+            </section>
+
+            <!-- VISTA: Explorar Módulos -->
+            <section id="viewExplorar" class="view">
+                <h2>Explorar módulos y documentos</h2>
+                <div class="modulo-list" id="moduloList">
+                    <!-- Se renderiza con JS -->
+                </div>
+            </section>
+
+            <!-- Modal de documento -->
+            <div id="docModal" class="modal">
+                <div class="modal-backdrop" onclick="cerrarModal()"></div>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="modalDocTitle">Documento</h3>
+                        <button class="modal-close" onclick="cerrarModal()">&times;</button>
+                    </div>
+                    <div class="modal-tabs">
+                        <button class="tab-btn active" data-tab="texto" onclick="cambiarTab('texto')">Texto</button>
+                        <button class="tab-btn" data-tab="pdf" onclick="cambiarTab('pdf')">PDF</button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="tabTexto" class="tab-pane active">
+                            <div id="docTextContent" class="doc-text">
+                                <p class="loading">Cargando texto...</p>
+                            </div>
+                        </div>
+                        <div id="tabPDF" class="tab-pane">
+                            <div id="pdfViewer" class="pdf-viewer">
+                                <p class="loading">Cargando PDF...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <p>Proyecto académico — Diplomado sobre Desaparición y Búsqueda de Personas en Latinoamérica</p>
+            <p class="footer-note">Material compilado para fines educativos y de autoestudio</p>
+        </div>
+    </footer>
+</div>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>
